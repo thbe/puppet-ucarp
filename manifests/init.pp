@@ -6,17 +6,17 @@
 #
 # Document parameters here.
 #
-# [*vIp*]
-#   Set the virtual IP
-#
 # [*vId*]
 #   Set the virtual ID
 #
+# [*vIp*]
+#   Set the virtual IP
+#
+# [*vIf*]
+#   Set the virtual Interface
+#
 # [*vPw*]
 #   Set the ucarp password
-#
-# [*revaliases*]
-#   Array of reverse aliases
 #
 # === Variables
 #
