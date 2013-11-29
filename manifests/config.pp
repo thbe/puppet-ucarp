@@ -12,7 +12,7 @@
 #
 class ucarp::config {
 
-  $localVipFile = '/etc/ucarp/vip-' + $ucarp::vId + '.conf'
+  $localVipFile = "/etc/ucarp/vip-${ucarp::vId}.conf"
 
   # UCARP configuration
   file {
