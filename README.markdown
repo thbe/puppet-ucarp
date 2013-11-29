@@ -13,7 +13,6 @@
 5. [Limitations - OS compatibility, etc.](#limitations)
 6. [Development - Guide for contributing to the module](#development)
 
-
 ##Overview
 
 The ucarp module provides the installation procedure for UCARP including the setup of
@@ -21,10 +20,7 @@ the virtual IP.
 
 ##Module Description
 
-The SSMTP module prelace the standard mail server configuration with a light
-wight sending only server. The behavior is the same as sendmail but without
-the possibility to recieve mails from external systems.
-
+The UCARP module provides a virtual IP that can be used in a cluster.
 
 ##Setup
 
@@ -42,7 +38,10 @@ can use:
 
 ```puppet
 class { '::ucarp':
-  mailHub => 'mail.example.local',
+  vId => '001',
+  vIp => '192.168.0.222',
+  vIf => 'eth0',
+  vPw => 'Secret'
 }
 ```
 
@@ -52,21 +51,11 @@ All interaction with the ucarp module can do be done through the main ucarp clas
 This means you can simply toggle the options in the ucarp class to get at the full
 functionality.
 
-###I just want SSMTP, what's the minimum I need?
+###I just want UCARP, what's the minimum I need?
 
 ```puppet
 include '::ucarp'
 ```
-
-###I just want to route all mails to central mail gateway, nothing else.
-
-```puppet
-class { '::ucarp':
-  vId => '001',
-  vIp => '192.168.0.222'
-}
-```
-
 
 ##Reference
 
@@ -93,7 +82,6 @@ Set the virtual Interface
 ####`vPw`
 Set the ucarp password
 
-
 ##Limitations
 
 This module has been built on and tested against Puppet 3.2 and higher.
@@ -105,14 +93,10 @@ The module has been tested on:
 
 Testing on other platforms has been light and cannot be guaranteed. 
 
-
 ##Development
 
 If you like to add or improve this module, feel free to fork the module and send
 me a merge request with the modification.
-
-##Authors
-Author Thomas Bendler <project@bendler-net.de>
 
 ##Copyright and License
 Copyright (C) 2013 Thomas Bendler
