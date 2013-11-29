@@ -1,5 +1,5 @@
 name    'thbe-ucarp'
-version '0.1.0'
+version '0.1.1'
 source 'https://github.com/thbe/puppet-ucarp.git'
 author 'Thomas Bendler <project@bendler-net.de>'
 license 'GPLv3'
