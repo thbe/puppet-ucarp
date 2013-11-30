@@ -91,7 +91,10 @@ The module has been tested on:
 * RedHat Enterprise Linux 6
 * Scientific Linux 6
 
-Testing on other platforms has been light and cannot be guaranteed. 
+Testing on other platforms has been light and cannot be guaranteed.
+
+Currently only eth0 is supported, using other interfaces result in a rewrite
+of the common template.
 
 ##Development
 

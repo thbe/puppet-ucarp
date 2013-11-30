@@ -1,7 +1,14 @@
+### vip-common.conf
+#
+# UCARP common configuation file
+#
+# Managed: Puppet <%= puppetversion %> on <%= puppetmaster %>
+#
+
 # Common VIP settings which can be overridden in individual vip-<nnnn>.conf
-PASSWORD="love"
-BIND_INTERFACE="eth0"
-SOURCE_ADDRESS=""
+PASSWORD="<%= scope.lookupvar('ucarp::vPw') %>"
+BIND_INTERFACE="<%= scope.lookupvar('ucarp::vIf') %>"
+SOURCE_ADDRESS="<%= scope.lookupvar('::ipaddress') %>"
 
 # If you have extra options to add, see "ucarp --help" output
 OPTIONS="--shutdown --preempt"

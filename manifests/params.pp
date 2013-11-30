@@ -32,8 +32,8 @@ class ucarp::params {
   }
 
   # UCARP definitions
-  vId = '001'
-  vIp = '192.168.0.1'
-  vIf = 'eth0'
-  vPw = 'SuperHyperSecret'
+  $vId = '001'
+  $vIp = '192.168.0.1'
+  $vIf = 'eth0'
+  $vPw = 'SuperHyperSecret'
 }
