@@ -8,4 +8,4 @@ description 'UCARP management module'
 project_page 'https://github.com/thbe/puppet-ucarp.git'
 
 ## Add dependencies, if any:
-dependency 'puppetlabs/stdlib', '>=2.2.0'
+dependency 'thbe/yum', '>=0.3.0'

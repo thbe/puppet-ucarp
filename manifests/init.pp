@@ -41,17 +41,18 @@ class ucarp (
   $vId = $ucarp::params::vId,
   $vIp = $ucarp::params::vIp,
   $vIf = $ucarp::params::vIf,
-  $vPw = $ucarp::params::vPw) inherits ucarp::params {
-
-  # Include Puppetlabs standard library
-  include stdlib
+  $vPw = $ucarp::params::vPw)  inherits ucarp::params {
+  # Require class yum to have the relevant repositories in place
+  require yum
 
   # Start workflow
   if $ucarp::params::linux {
-    anchor { 'ucarp::start': }
-    -> class { 'ucarp::package': }
-    ~> class { 'ucarp::config': }
-    ~> class { 'ucarp::service': }
-    ~> anchor { 'ucarp::end': }
+    contain ucarp::package
+    contain ucarp::config
+    contain ucarp::service
+
+    Class['ucarp::package'] ->
+    Class['ucarp::config'] ->
+    Class['ucarp::service']
   }
 }
