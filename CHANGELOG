@@ -1,2 +1,5 @@
 0.1.3 2013-12-09 thbe <project@bendler-net.de>
 * Added LICENSE and CHANGELOG
+
+0.1.4 2014-07-14 thbe <project@bendler-net.de>
+* Removed puppetmaster fact from template
