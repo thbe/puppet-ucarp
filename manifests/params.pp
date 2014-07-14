@@ -25,6 +25,9 @@ class ucarp::params {
 
       # Service definition
       $serviceName = 'ucarp'
+
+      # Upscript/Downscript directory
+      $scriptDir = '/usr/libexec/ucarp'
     }
     default  : {
       $linux = false
@@ -36,4 +39,6 @@ class ucarp::params {
   $vIp = '192.168.0.1'
   $vIf = 'eth0'
   $vPw = 'SuperHyperSecret'
+  $upscript = 'ucarp/vip-up.erb'
+  $downscript = 'ucarp/vip-down.erb'
 }
