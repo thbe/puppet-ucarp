@@ -63,6 +63,13 @@ class ucarp (
 
   # Start workflow
   if $ucarp::params::linux {
+    contain ucarp::package
+    contain ucarp::config
+    contain ucarp::service
+
+    Class['ucarp::package'] ->
+    Class['ucarp::config'] ->
+    Class['ucarp::service']
     anchor { 'ucarp::start': }
     -> class { 'ucarp::package': }
     ~> class { 'ucarp::config': }
