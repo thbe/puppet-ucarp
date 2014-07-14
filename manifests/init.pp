@@ -55,6 +55,9 @@ class ucarp (
   $upscript = $ucarp::params::upscript,
   $downscript = $ucarp::params::downscript) inherits ucarp::params {
 
+  # Require class yum to have the relevant repositories in place
+  require yum
+
   # Include Puppetlabs standard library
   include stdlib
 
