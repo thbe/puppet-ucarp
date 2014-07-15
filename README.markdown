@@ -82,6 +82,14 @@ Set the virtual Interface
 ####`vPw`
 Set the ucarp password
 
+####`upscript`
+Include a custom template for the ucarp upscript.
+See the included template for ideas.
+
+####`downscript`
+Include a custom template for the ucarp downscript.
+See the included template for ideas.
+
 ##Limitations
 
 This module has been built on and tested against Puppet 3.2 and higher.
