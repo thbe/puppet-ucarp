@@ -1,18 +1,17 @@
 {
   "name": "thbe-ucarp",
-  "version": "0.1.2",
+  "version": "0.1.5",
+  "author": "thbe",
   "summary": "UCARP management module",
-  "author": "Thomas Bendler \u003cproject@bendler-net.de\u003e",
-  "description": "UCARP management module",
-  "dependencies": [
-    {
-      "name": "puppetlabs/stdlib",
-      "version_requirement": "\u003e\u003d4.1.0"
-    }
-  ],
-  "types": [],
-  "checksums": {},
+  "license": "GPL-3.0",
   "source": "https://github.com/thbe/puppet-ucarp.git",
-  "project_page": "https://github.com/thbe/puppet-ucarp.git",
-  "license": "GPLv3"
+  "project_page": "https://github.com/thbe/puppet-ucarp",
+  "issues_url": "https://github.com/thbe/puppet-ucarp/issues",
+  "operatingsystem_support": [
+    { "operatingsystem": "Scientific", "operatingsystemrelease": [ "6.0", "7.0" ] },
+    { "operatingsystem": "CentOS", "operatingsystemrelease": [ "6.0", "7.0" ] }
+  ],
+  "dependencies": [
+    { "name": "thbe-yum", "version_range": ">= 0.4.10" }
+  ]
 }
