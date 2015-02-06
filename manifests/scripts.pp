@@ -15,17 +15,17 @@ class ucarp::scripts {
   file {
     "${ucarp::params::scriptDir}/vip-up":
       ensure  => file,
-      mode    => '700',
-      owner   => 'root',
-      group   => 'root',
+      mode    => '0700',
+      owner   => root,
+      group   => root,
       path    => "${ucarp::params::scriptDir}/vip-up",
       content => template($ucarp::upscript);
 
     "${ucarp::params::scriptDir}/vip-down":
       ensure  => file,
-      mode    => '700',
-      owner   => 'root',
-      group   => 'root',
+      mode    => '0700',
+      owner   => root,
+      group   => root,
       path    => "${ucarp::params::scriptDir}/vip-down",
       content => template($ucarp::downscript);
   }

@@ -18,7 +18,7 @@ class ucarp::config {
   file {
     $ucarp::params::configUcarpConf:
       ensure  => present,
-      mode    => 600,
+      mode    => '0600',
       owner   => root,
       group   => root,
       path    => $ucarp::params::configUcarpConf,
@@ -26,7 +26,7 @@ class ucarp::config {
 
     $localVipFile:
       ensure  => present,
-      mode    => 644,
+      mode    => '0644',
       owner   => root,
       group   => root,
       path    => $localVipFile,

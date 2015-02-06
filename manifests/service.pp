@@ -20,6 +20,6 @@ class ucarp::service inherits ucarp::params {
     name       => $ucarp::params::serviceName,
     require    => [
       Package[$ucarp::params::packageCommon],
-      File[$configUcarpConf]];
+      File[$ucarp::params::configUcarpConf]];
   }
 }
