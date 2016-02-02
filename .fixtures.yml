@@ -1,7 +1,5 @@
 fixtures:
   forge_modules:
-    stdlib: "puppetlabs/stdlib"
-    mysql: "puppetlabs/mysql"
-    staging: "nanliu/staging"
+    yum: "thbe/yum"
   symlinks:
-    bareos: "#{source_dir}"
+    ucarp: "#{source_dir}"
