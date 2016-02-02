@@ -38,10 +38,10 @@ can use:
 
 ```puppet
 class { '::ucarp':
-  vId => '001',
-  vIp => '192.168.0.222',
-  vIf => 'eth0',
-  vPw => 'Secret'
+  virtual_id => '001',
+  virtual_ip => '192.168.0.222',
+  virtual_if => 'eth0',
+  virtual_pw => 'Secret'
 }
 ```
 
@@ -70,16 +70,16 @@ include '::ucarp'
 
 The following parameters are available in the ucarp module
 
-####`vId`
+####`virtual_id`
 Set the virtual ID
 
-####`vIp`
+####`virtual_ip`
 Set the virtual IP
 
-####`vIf`
+####`virtual_if`
 Set the virtual Interface
 
-####`vPw`
+####`virtual_pw`
 Set the ucarp password
 
 ####`upscript`
@@ -96,8 +96,8 @@ This module has been built on and tested against Puppet 3.2 and higher.
 
 The module has been tested on:
 
-* RedHat Enterprise Linux 6
-* Scientific Linux 6
+* CentOS 6
+* CentOS 7
 
 Testing on other platforms has been light and cannot be guaranteed.
 
@@ -108,19 +108,3 @@ of the common template.
 
 If you like to add or improve this module, feel free to fork the module and send
 me a merge request with the modification.
-
-##Copyright and License
-Copyright (C) 2013 Thomas Bendler
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.

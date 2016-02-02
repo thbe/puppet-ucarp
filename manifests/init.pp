@@ -6,16 +6,16 @@
 #
 # Document parameters here.
 #
-# [*vId*]
+# [*virtual_id*]
 #   Set the virtual ID
 #
-# [*vIp*]
+# [*virtual_ip*]
 #   Set the virtual IP
 #
-# [*vIf*]
+# [*virtual_if*]
 #   Set the virtual Interface
 #
-# [*vPw*]
+# [*virtual_pw*]
 #   Set the ucarp password
 #
 # [*upscript*]
@@ -31,10 +31,10 @@
 # === Examples
 #
 #  class { '::ucarp':
-#    vId        => '001',
-#    vIp        => '192.168.0.1',
-#    vIf        => 'eth0',
-#    vPw        => 'SuperHyperSecret',
+#    virtual_id => '001',
+#    virtual_ip => '192.168.0.1',
+#    virtual_if => 'eth0',
+#    virtual_pw => 'SuperHyperSecret',
 #    upscript   => 'mymodule/vip-up.erb',
 #    downscript => 'mymodule/vip-down.erb',
 #  }
@@ -45,14 +45,14 @@
 #
 # === Copyright
 #
-# Copyright 2013 Thomas Bendler
+# Copyright 2016 Thomas Bendler
 #
 class ucarp (
-  $vId = $ucarp::params::vId,
-  $vIp = $ucarp::params::vIp,
-  $vIf = $ucarp::params::vIf,
-  $vPw = $ucarp::params::vPw,
-  $upscript = $ucarp::params::upscript,
+  $virtual_id = $ucarp::params::virtual_id,
+  $virtual_ip = $ucarp::params::virtual_ip,
+  $virtual_if = $ucarp::params::virtual_if,
+  $virtual_pw = $ucarp::params::virtual_pw,
+  $upscript   = $ucarp::params::upscript,
   $downscript = $ucarp::params::downscript) inherits ucarp::params {
 
   # Require class yum to have the relevant repositories in place

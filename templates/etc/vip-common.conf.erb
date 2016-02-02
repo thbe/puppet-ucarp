@@ -6,8 +6,8 @@
 #
 
 # Common VIP settings which can be overridden in individual vip-<nnnn>.conf
-PASSWORD="<%= scope.lookupvar('ucarp::vPw') %>"
-BIND_INTERFACE="<%= scope.lookupvar('ucarp::vIf') %>"
+PASSWORD="<%= scope.lookupvar('ucarp::virtual_pw') %>"
+BIND_INTERFACE="<%= scope.lookupvar('ucarp::virtual_if') %>"
 SOURCE_ADDRESS="<%= scope.lookupvar('::ipaddress') %>"
 
 # If you have extra options to add, see "ucarp --help" output

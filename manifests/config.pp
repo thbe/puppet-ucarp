@@ -12,24 +12,24 @@
 #
 class ucarp::config {
 
-  $localVipFile = "/etc/ucarp/vip-${ucarp::vId}.conf"
+  $local_vip_file = "/etc/ucarp/vip-${ucarp::virtual_id}.conf"
 
   # UCARP configuration
   file {
-    $ucarp::params::configUcarpConf:
+    $ucarp::params::config_ucarp_conf:
       ensure  => present,
       mode    => '0600',
       owner   => root,
       group   => root,
-      path    => $ucarp::params::configUcarpConf,
+      path    => $ucarp::params::config_ucarp_conf,
       content => template('ucarp/etc/vip-common.conf.erb');
 
-    $localVipFile:
+    $local_vip_file:
       ensure  => present,
       mode    => '0644',
       owner   => root,
       group   => root,
-      path    => $localVipFile,
+      path    => $local_vip_file,
       content => template('ucarp/etc/vip-000.conf.erb');
   }
 }

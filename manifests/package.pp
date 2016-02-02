@@ -11,5 +11,5 @@
 # Sample Usage: include ucarp::package
 #
 class ucarp::package {
-  package { $ucarp::params::packageCommon: ensure => installed; }
+  package { $ucarp::params::package_common: ensure => installed; }
 }
