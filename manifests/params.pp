@@ -15,22 +15,27 @@ class ucarp::params {
   # Operating system specific definitions
   case $::osfamily {
     'RedHat' : {
-      $linux             = true
+      $linux                  = true
 
       # Package definition
-      $package_common    = 'ucarp'
+      $package_common         = 'ucarp'
 
       # Config definition
-      $config_ucarp_conf = '/etc/ucarp/vip-common.conf'
+      $config_dir             = '/etc/ucarp'
+      $config_common          = '/etc/ucarp/vip-common.conf'
+      $config_common_template = 'ucarp/etc/vip-common.conf.erb'
+      $config_id_template     = 'ucarp/etc/vip-template.conf.erb'
 
       # Service definition
-      $service_name      = 'ucarp'
+      $service_ucarp          = 'ucarp'
 
       # Upscript/Downscript directory
-      $script_dir        = '/usr/libexec/ucarp'
+      $script_dir             = '/usr/libexec/ucarp'
+      $script_up_template     = 'ucarp/scripts/vip-up.erb'
+      $script_down_template   = 'ucarp/scripts/vip-down.erb'
     }
     default  : {
-      $linux             = false
+      $linux                  = false
     }
   }
 
@@ -39,6 +44,4 @@ class ucarp::params {
   $virtual_ip = '192.168.0.1'
   $virtual_if = 'eth0'
   $virtual_pw = 'SuperHyperSecret'
-  $upscript   = 'ucarp/vip-up.erb'
-  $downscript = 'ucarp/vip-down.erb'
 }

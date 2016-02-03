@@ -1,3 +1,8 @@
+0.2.0 2016-02-03 thbe <project@bendler-net.de>
+ * Add systemd support
+ * Rewrite for Puppet 4.x
+ * Add test suite
+
 0.1.3 2013-12-09 thbe <project@bendler-net.de>
  * Added LICENSE and CHANGELOG
 

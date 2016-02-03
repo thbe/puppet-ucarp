@@ -18,11 +18,11 @@
 # [*virtual_pw*]
 #   Set the ucarp password
 #
-# [*upscript*]
+# [*script_up_template*]
 #   Set a template for the "upscript," or script that runs when your vIp comes online.
 #   Defaults to Red Hat-provided script.
 #
-# [*downscript*]
+# [*script_down_template*]
 #   Set a template for the "downscript," or script that runs when your vIp goes offline.
 #   Defaults to Red Hat-provided script.
 #
@@ -35,8 +35,6 @@
 #    virtual_ip => '192.168.0.1',
 #    virtual_if => 'eth0',
 #    virtual_pw => 'SuperHyperSecret',
-#    upscript   => 'mymodule/vip-up.erb',
-#    downscript => 'mymodule/vip-down.erb',
 #  }
 #
 # === Authors
@@ -48,15 +46,12 @@
 # Copyright 2016 Thomas Bendler
 #
 class ucarp (
-  $virtual_id = $ucarp::params::virtual_id,
-  $virtual_ip = $ucarp::params::virtual_ip,
-  $virtual_if = $ucarp::params::virtual_if,
-  $virtual_pw = $ucarp::params::virtual_pw,
-  $upscript   = $ucarp::params::upscript,
-  $downscript = $ucarp::params::downscript) inherits ucarp::params {
-
-  # Require class yum to have the relevant repositories in place
-  require yum
+  $virtual_id           = $ucarp::params::virtual_id,
+  $virtual_ip           = $ucarp::params::virtual_ip,
+  $virtual_if           = $ucarp::params::virtual_if,
+  $virtual_pw           = $ucarp::params::virtual_pw,
+  $script_up_template   = $ucarp::params::script_up_template,
+  $script_down_template = $ucarp::params::script_down_template) inherits ucarp::params {
 
   # Start workflow
   if $ucarp::params::linux {

@@ -1,5 +1,9 @@
 # ucarp #
 
+[![Build Status](https://travis-ci.org/thbe/puppet-ucarp.png?branch=master)](https://travis-ci.org/thbe/puppet-ucarp)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/thbe/ucarp.svg)](https://forge.puppetlabs.com/thbe/ucarp)
+[![Coverage Status](https://coveralls.io/repos/thbe/puppet-ucarp/badge.svg?branch=master&service=github)](https://coveralls.io/github/thbe/puppet-ucarp?branch=master)
+
 ####Table of Contents
 
 1. [Overview](#overview)
@@ -82,11 +86,11 @@ Set the virtual Interface
 ####`virtual_pw`
 Set the ucarp password
 
-####`upscript`
+####`script_up_template`
 Include a custom template for the ucarp upscript.
 See the included template for ideas.
 
-####`downscript`
+####`script_down_template`
 Include a custom template for the ucarp downscript.
 See the included template for ideas.
 
