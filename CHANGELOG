@@ -1,3 +1,6 @@
+0.2.1 2016-02-03 thbe <project@bendler-net.de>
+ * Fix issue #3, clean up old entries in /etc/ucarp
+
 0.2.0 2016-02-03 thbe <project@bendler-net.de>
  * Add systemd support
  * Rewrite for Puppet 4.x
