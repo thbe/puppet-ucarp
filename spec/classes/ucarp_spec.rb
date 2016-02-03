@@ -36,7 +36,12 @@ describe 'ucarp', :type => :class do
         it { is_expected.to contain_file('/etc/ucarp/vip-common.conf').with_ensure('file') }
         it { is_expected.to contain_file('/etc/ucarp/vip-001.conf').with_ensure('file') }
 
-        it { is_expected.to contain_service('ucarp').with( 'ensure' => 'running', 'enable' => 'true') }
+        case facts[:operatingsystemmajrelease]
+        when '7'
+          it { is_expected.to contain_service('ucarp@001').with( 'ensure' => 'running', 'enable' => 'true') }
+        else
+          it { is_expected.to contain_service('ucarp').with( 'ensure' => 'running', 'enable' => 'true') }
+        end
 
         it 'should generate valid content for vip-common.conf' do
           content = catalogue.resource('file', '/etc/ucarp/vip-common.conf').send(:parameters)[:content]

@@ -53,6 +53,13 @@ class ucarp (
   $script_up_template   = $ucarp::params::script_up_template,
   $script_down_template = $ucarp::params::script_down_template) inherits ucarp::params {
 
+  # Fix service name for systemd
+  if $::operatingsystemmajrelease == 7 {
+    $local_service_ucarp = "${ucarp::params::service_ucarp}@${ucarp::virtual_id}"
+  } else {
+    $local_service_ucarp = $ucarp::params::service_ucarp
+  }
+
   # Start workflow
   if $ucarp::params::linux {
     contain ucarp::package

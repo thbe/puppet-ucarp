@@ -20,7 +20,7 @@ class ucarp::scripts {
     ensure  => file,
     mode    => '0755',
     content => template($ucarp::script_up_template),
-    notify  => Service[$ucarp::params::service_ucarp],
+    notify  => Service[$ucarp::local_service_ucarp],
     require => Package[$ucarp::params::package_common];
   }
 
@@ -28,7 +28,7 @@ class ucarp::scripts {
     ensure  => file,
     mode    => '0755',
     content => template($ucarp::script_down_template),
-    notify  => Service[$ucarp::params::service_ucarp],
+    notify  => Service[$ucarp::local_service_ucarp],
     require => Package[$ucarp::params::package_common];
   }
 }

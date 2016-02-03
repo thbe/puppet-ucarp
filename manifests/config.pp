@@ -19,7 +19,7 @@ class ucarp::config {
     ensure  => file,
     mode    => '0600',
     content => template($ucarp::params::config_common_template),
-    notify  => Service[$ucarp::params::service_ucarp],
+    notify  => Service[$ucarp::local_service_ucarp],
     require => Package[$ucarp::params::package_common];
   }
 
@@ -27,7 +27,7 @@ class ucarp::config {
     ensure  => file,
     mode    => '0644',
     content => template($ucarp::params::config_id_template),
-    notify  => Service[$ucarp::params::service_ucarp],
+    notify  => Service[$ucarp::local_service_ucarp],
     require => Package[$ucarp::params::package_common];
   }
 }

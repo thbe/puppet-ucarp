@@ -11,10 +11,10 @@
 # Sample Usage:
 #
 # [Remember: No empty lines between comments and class definition]
-class ucarp::service inherits ucarp::params {
+class ucarp::service {
 
   service {
-    $ucarp::params::service_ucarp:
+    $ucarp::local_service_ucarp:
       ensure  => 'running',
       enable  => true,
       require => Package[$ucarp::params::package_common];
