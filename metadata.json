@@ -9,6 +9,7 @@
   "issues_url": "https://github.com/thbe/puppet-ucarp/issues",
   "operatingsystem_support": [
     { "operatingsystem": "Scientific", "operatingsystemrelease": [ "6.0", "7.0" ] },
+    { "operatingsystem": "OracleLinux", "operatingsystemrelease": [ "6.0", "7.0" ] },
     { "operatingsystem": "CentOS", "operatingsystemrelease": [ "6.0", "7.0" ] }
   ],
   "dependencies": []
