@@ -11,11 +11,16 @@ describe 'ucarp', :type => :class do
       it { is_expected.to contain_class('ucarp::package') }
       it { is_expected.to contain_class('ucarp::config') }
       it { is_expected.to contain_class('ucarp::service') }
+      it { is_expected.to contain_class('ucarp::params') }
+      it { is_expected.to contain_class('ucarp::scripts') }
 
       it { is_expected.to contain_package('ucarp').with_ensure('installed') }
 
+      it { is_expected.to contain_file('/etc/ucarp').with_ensure('directory') }
       it { is_expected.to contain_file('/etc/ucarp/vip-common.conf').with_ensure('file') }
       it { is_expected.to contain_file('/etc/ucarp/vip-001.conf').with_ensure('file') }
+      it { is_expected.to contain_file('/usr/libexec/ucarp/vip-down').with_ensure('file') }
+      it { is_expected.to contain_file('/usr/libexec/ucarp/vip-up').with_ensure('file') }
 
       it 'should generate valid content for vip-common.conf' do
         content = catalogue.resource('file', '/etc/ucarp/vip-common.conf').send(:parameters)[:content]
