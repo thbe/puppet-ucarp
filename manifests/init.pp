@@ -62,14 +62,14 @@ class ucarp (
 
   # Start workflow
   if $ucarp::params::linux {
-    contain ucarp::package
-    contain ucarp::config
-    contain ucarp::scripts
-    contain ucarp::service
+    contain ::ucarp::package
+    contain ::ucarp::config
+    contain ::ucarp::scripts
+    contain ::ucarp::service
 
-    Class['ucarp::package'] ->
-    Class['ucarp::config'] ->
-    Class['ucarp::scripts'] ->
-    Class['ucarp::service']
+    Class['ucarp::package']
+    -> Class['ucarp::config']
+    -> Class['ucarp::scripts']
+    -> Class['ucarp::service']
   }
 }

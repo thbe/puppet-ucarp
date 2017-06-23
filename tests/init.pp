@@ -1,1 +1,1 @@
-include ucarp
+class { '::ucarp': }
