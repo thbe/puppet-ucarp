@@ -88,7 +88,7 @@ Set the ucarp password
 
 ##Limitations
 
-This module has been built on and tested against Puppet 3.2 and higher.
+This module has been built on and tested against Puppet 5.0 and higher.
 
 The module has been tested on:
 
