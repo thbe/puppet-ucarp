@@ -6,7 +6,7 @@ HOSTS:
     docker_preserve_image: true
     docker_cmd: '["/sbin/init"]'
     docker_image_commands:
-      - 'yum update -y && yum install -y redhat-lsb epel-release iproute'
+      - 'yum update -y && yum install -y redhat-lsb epel-release iproute initscripts'
 CONFIG:
   trace_limit: 200
   masterless: true
