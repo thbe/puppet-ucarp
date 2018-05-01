@@ -4,7 +4,7 @@ describe 'ucarp', :type => :class do
   on_supported_os.each do |os, facts|
     context "on #{os}" do
       let(:facts)  { facts }
-      let(:params) { {:virtual_id => '001', :virtual_ip => '192.168.0.1', :virtual_if => 'eth0', :virtual_pw => 'SuperHyperSecret'} }
+      let(:params) { {:virtual_id => '001', :virtual_ip => '192.168.0.1', :virtual_pw => 'SuperHyperSecret'} }
 
       it { is_expected.to compile.with_all_deps }
 
@@ -23,7 +23,6 @@ describe 'ucarp', :type => :class do
       it 'should generate valid content for vip-common.conf' do
         content = catalogue.resource('file', '/etc/ucarp/vip-common.conf').send(:parameters)[:content]
         expect(content).to match('PASSFILE="/etc/ucarp/vip-001.pwd"')
-        expect(content).to match('BIND_INTERFACE="eth0"')
       end
 
       it 'should generate valid content for vip-001.conf' do

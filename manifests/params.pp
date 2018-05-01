@@ -38,6 +38,6 @@ class ucarp::params {
   # UCARP definitions
   $virtual_id = '001'
   $virtual_ip = '192.168.0.1'
-  $virtual_if = 'eth0'
+  $virtual_if = $::networking[primary]
   $virtual_pw = 'SuperHyperSecret'
 }

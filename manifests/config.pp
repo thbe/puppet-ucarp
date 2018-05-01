@@ -16,13 +16,12 @@ class ucarp::config {
   $local_vip_pwd_file = "${ucarp::params::config_dir}/vip-${ucarp::virtual_id}.pwd"
 
   # UCARP configuration
-  file {
-    $ucarp::params::config_dir:
-      ensure  => directory,
-      mode    => '0755',
-      purge   => true,
-      force   => true,
-      recurse => true;
+  file { $ucarp::params::config_dir:
+    ensure  => directory,
+    mode    => '0755',
+    purge   => true,
+    force   => true,
+    recurse => true;
   }
 
   file { $ucarp::params::config_common:
