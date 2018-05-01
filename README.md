@@ -86,21 +86,12 @@ Set the virtual Interface
 ####`virtual_pw`
 Set the ucarp password
 
-####`script_up_template`
-Include a custom template for the ucarp upscript.
-See the included template for ideas.
-
-####`script_down_template`
-Include a custom template for the ucarp downscript.
-See the included template for ideas.
-
 ##Limitations
 
 This module has been built on and tested against Puppet 3.2 and higher.
 
 The module has been tested on:
 
-* CentOS 6
 * CentOS 7
 
 Testing on other platforms has been light and cannot be guaranteed.

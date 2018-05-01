@@ -1,4 +1,4 @@
-# Class: ucarp::package
+# Class: ucarp::install
 #
 # This module contain the service configuration for UCARP
 #
@@ -10,6 +10,6 @@
 #
 # Sample Usage: include ucarp::package
 #
-class ucarp::package {
+class ucarp::install {
   package { $ucarp::params::package_common: ensure => installed; }
 }

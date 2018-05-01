@@ -13,10 +13,9 @@
 # [Remember: No empty lines between comments and class definition]
 class ucarp::service {
 
-  service {
-    $ucarp::local_service_ucarp:
-      ensure  => 'running',
-      enable  => true,
-      require => Package[$ucarp::params::package_common];
+  service { $ucarp::local_service_ucarp:
+    ensure  => 'running',
+    enable  => true,
+    require => Package[$ucarp::params::package_common];
   }
 }

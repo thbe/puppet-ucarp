@@ -8,11 +8,12 @@
 #
 # Requires:     This module has no requirements
 #
-# Sample Usage: include ucarp::config
+# Sample Usage:
 #
 class ucarp::config {
 
-  $local_vip_file = "${ucarp::params::config_dir}/vip-${ucarp::virtual_id}.conf"
+  $local_vip_conf_file = "${ucarp::params::config_dir}/vip-${ucarp::virtual_id}.conf"
+  $local_vip_pwd_file = "${ucarp::params::config_dir}/vip-${ucarp::virtual_id}.pwd"
 
   # UCARP configuration
   file {
@@ -32,10 +33,18 @@ class ucarp::config {
     require => Package[$ucarp::params::package_common];
   }
 
-  file { $local_vip_file:
+  file { $local_vip_conf_file:
     ensure  => file,
-    mode    => '0644',
-    content => template($ucarp::params::config_id_template),
+    mode    => '0600',
+    content => template($ucarp::params::config_vip_template),
+    notify  => Service[$ucarp::local_service_ucarp],
+    require => Package[$ucarp::params::package_common];
+  }
+
+  file { $local_vip_pwd_file:
+    ensure  => file,
+    mode    => '0600',
+    content => template($ucarp::params::config_vip_pwd_template),
     notify  => Service[$ucarp::local_service_ucarp],
     require => Package[$ucarp::params::package_common];
   }

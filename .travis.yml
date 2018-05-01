@@ -39,3 +39,12 @@ branches:
 notifications:
   email:
   - project@bendler-net.de
+deploy:
+  provider: puppetforge
+  user: thbe
+  password:
+    secure: oXjN4trKYJwLwG5c/6PuQA2C/+qpWlGvJ+HV/5Vr3H7Mb482eDa/QWZttknI2kbI8qTGkxCxCbB+qMN1rrU1XVj/31oaiCx5F5TDniLjlXFJ+GNbsjjrBOTI+YO9S9JpngHcZiU/M+9U44q6P1+qboFGL7RKWGHvnuRT13M3jKiHlLb9derCS1HF0XVF+V3sLxYHenOd5m9dIx9rSpmdQLvzJb7qUHL5zcogZr4wYUTwVEOsCijfEHS9HTrG+S+CO78TvmG58SWEcBBS0EQDd8ASSbKD2LTcEhwZTcLqnPPG8BLjxjSmdZradxYjjDQ6TQvswHli1WFJtKHIJWr+UyZSYMSGV0w9T5dAvWkfUQSsiBuH7MzoC0zhYdNFguTYsMxBKj1juD77/gIOcUaviyzT8dv90VEkm0EU8iZIUG+vXCzfHBA5Fgo/LPti3bNFX36rRTVAXZwZbdAWSNas1MVhI1EKLCUgBx+hRYgj8zC7DiS5xZwTCBSLG5+MDpMmv8IHA2bMbdVvCr0IlA1YI/j8x/Au0P4fr+EYwrSMxiNBCLYz/lhq43pIgiSnz14V0D0+yvvhXAd+mXNhqOrtCxpUoxow1MK6Velb46971mmfMGF1NKgK2NOLJgKnTtK8c3feGFWQGvz/wOikfuZUHLAqx2xXWMXSdyP0OLcldN8=
+  on:
+    tags: true
+    all_branches: true
+    condition: "$DEPLOY_TO_FORGE = yes"

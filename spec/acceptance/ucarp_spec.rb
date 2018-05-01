@@ -8,8 +8,6 @@ class { 'ucarp':
   virtual_ip           => '192.168.0.1',
   virtual_if           => 'eth0',
   virtual_pw           => 'SuperHyperSecret',
-  script_up_template   => 'ucarp/scripts/vip-up.erb',
-  script_down_template => 'ucarp/scripts/vip-down.erb',
 }
 CLASSPARAMETER
   }
@@ -23,11 +21,6 @@ CLASSPARAMETER
     expect(@result.exit_code).to be_zero
   end
 
-  describe file('/etc/ucarp') do
-    it { should be_directory }
-    it { should exist }
-  end
-
   describe file('/etc/ucarp/vip-common.conf') do
     it { should be_file }
     it { should exist }
@@ -38,12 +31,7 @@ CLASSPARAMETER
     it { should exist }
   end
 
-  describe file('/usr/libexec/ucarp/vip-down') do
-    it { should be_file }
-    it { should exist }
-  end
-
-  describe file('/usr/libexec/ucarp/vip-up') do
+  describe file('/etc/ucarp/vip-001.pwd') do
     it { should be_file }
     it { should exist }
   end
